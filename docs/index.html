@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/icons8-hotel-vitaliy-gorbachev-lineal-color-32.png"/>
+    <script src="https://kit.fontawesome.com/fcf089f8c7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./graciosamar-ev1-mobile.css">
+    <title>Apartamentos Graciosamar</title>
+</head>
+<body>
+    <!-- LOGIN -->
+    
+    <div id="wrapper_login">
+        <div id="login">
+            <div class="user_div">
+                <i class="fa-regular fa-user"></i> 
+                <input id="user" type="text" autocomplete="off">
+            </div>
+            <div class="pass_div">
+                <i class="fa-solid fa-key"></i>
+                <input id="pass" type="password">
+            </div>
+            <div class="login_btn">
+                <button onclick="acceso()">Login</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTON SUBIR -->
+
+    <a href="#arriba"><div id="boton_subir">
+        <i class="fa-solid fa-angle-up"></i>
+    </div></a>
+
+    <!-- NAV ESCRITORIO -->
+
+    <div id="nav_escritorio">
+        <div class="user_desktop">
+            <h1 class="titulo">Apartamentos Graciosamar</h1>
+            <span class="user_span"></span>
+        </div>
+        <ul>
+            <a href="#reservar"><li><i class="fa-solid fa-calendar-days"></i> Reservar</li></a>
+            <a href="#apartamentos"><li><i class="fa-solid fa-hotel"></i> Apartamentos</li></a>
+            <a href="#servicios"><li><i class="fa-solid fa-key"></i> Servicios</li></a>
+            <a href="#contacto"><li><i class="fa-solid fa-envelope"></i> Contacto</li></a>
+            <a href="#tarifas"><li><i class="fa-solid fa-credit-card"></i> Tarifas</li></a>
+            <a href="#"><li><i class="fa-solid fa-map-location-dot"></i> Ubicación</li></a>
+            <a href="#"><li><i class="fa-solid fa-phone-flip"></i> +34 673 383 958</li></a>
+        </ul>
+    </div>
+
+    <!-- NAV MOVIL -->
+
+    <div id="nav_movil">
+        <div class="user_mobile">
+            <h1 class="titulo">Apartamentos Graciosamar</h1>
+            <span class="user_span"></span>
+        </div>
+        <div id="boton_menu">
+            <i class="fa-solid fa-bars" onclick="clickMenu()"></i>
+        </div>
+    </div>
+    <nav id="desplegable">
+        <ul>
+            <a href="#reservar" onclick="apartadoFocus(this)"><li><i class="fa-solid fa-calendar-days"></i> Reservar</li></a>
+            <a href="#apartamentos" onclick="apartadoFocus(this)"><li><i class="fa-solid fa-hotel"></i> Apartamentos</li></a>
+            <a href="#servicios" onclick="apartadoFocus(this)"><li><i class="fa-solid fa-key"></i> Servicios</li></a>
+            <a href="#contacto" onclick="apartadoFocus(this)"><li><i class="fa-solid fa-envelope"></i> Contacto</li></a>
+            <a href="#tarifas" onclick="apartadoFocus(this)"><li><i class="fa-solid fa-credit-card"></i> Tarifas</li></a>
+            <a href="#" onclick="apartadoFocus(this)"><li><i class="fa-solid fa-map-location-dot"></i> Ubicación</li></a>
+            <a href="#" onclick="apartadoFocus(this)"><li><i class="fa-solid fa-phone-flip"></i> +34 673 383 958</li></a>
+        </ul>
+    </nav>
+
+    <!-- ENCABEZADO -->
+
+    <header id="arriba">
+        <div id="reservar" class="texto_sobre">
+            <h2 class="titulo2">Apartamentos Graciosamar</h2>
+            <h3 class="titulo3">RESERVA TUS PRÓXIMAS VACACIONES DE ENSUEÑO EN LA GRACIOSA</h3>
+        </div>
+    </header>
+
+    <!-- NOCHES -->
+
+    <div id="datos">
+        <div id="precio"><p>Desde 55€<span class="texto_precio">/noche</span></p></div>
+        <div id="caracteristicas">
+            <ul>
+                <li><i class="fa-solid fa-people-roof"></i> Hasta 5 Huéspedes</li>
+                <li><i class="fa-solid fa-cart-flatbed-suitcase"></i> 2 Habitaciones</li>
+                <li><i class="fa-solid fa-shower"></i> 1 o 2 Baños</li>
+                <li><i class="fa-solid fa-wifi"></i> Wifi</li>
+            </ul>
+        </div>
+        <div id="boton_info">
+            <button onclick="mostrarEmergente()">Más info</button>
+        </div>
+    </div>
+
+    <!-- GALERIA -->
+
+    <div id="carrusel" onmouseover="temporizador('desactivar')" onmouseout="temporizador('activar')">
+        <a id="izquierda_link" onclick="mover('izquierda')"><i class="fa-solid fa-angle-left"></i></a>
+        <section id="tira_imagenes">
+            <article>
+                <img src="./img/img_desktop/01.webp"
+                    srcset="./img/img_mobile/01.webp 640w,
+                            ./img/img_tablet/01.webp 1080w,
+                            ./img/img_desktop/01.webp 1920w" 
+                    alt="room_1" onclick="abrir_completa(0)">
+            </article>
+            <article>
+                <img src="./img/img_desktop/02.webp"
+                    srcset="./img/img_mobile/02.webp 640w,
+                            ./img/img_tablet/02.webp 1080w,
+                            ./img/img_desktop/02.webp 1920w"  
+                    alt="room_2" onclick="abrir_completa(-100)">
+            </article>
+            <article>
+                <img src="./img/img_desktop/03.webp"
+                    srcset="./img/img_mobile/03.webp 640w,
+                            ./img/img_tablet/03.webp 1080w,
+                            ./img/img_desktop/03.webp 1920w"   
+                    alt="room_3" onclick="abrir_completa(-200)">
+            </article>
+            <article>
+                <img src="./img/img_desktop/04.webp"
+                srcset="./img/img_mobile/04.webp 640w,
+                        ./img/img_tablet/04.webp 1080w,
+                        ./img/img_desktop/04.webp 1920w"   
+                alt="room_4" onclick="abrir_completa(-300)">
+            </article>
+            <article>
+                <img src="./img/img_desktop/05.webp"
+                srcset="./img/img_mobile/05.webp 640w,
+                        ./img/img_tablet/05.webp 1080w,
+                        ./img/img_desktop/05.webp 1920w"   
+                alt="room_5" onclick="abrir_completa(-400)">
+            </article>
+            <article>
+                <img src="./img/img_desktop/06.webp"
+                srcset="./img/img_mobile/06.webp 640w,
+                        ./img/img_tablet/06.webp 1080w,
+                        ./img/img_desktop/06.webp 1920w"   
+                alt="room_6" onclick="abrir_completa(-500)">
+            </article>
+            <article>
+                <img src="./img/img_desktop/07.webp"
+                srcset="./img/img_mobile/07.webp 640w,
+                        ./img/img_tablet/07.webp 1080w,
+                        ./img/img_desktop/07.webp 1920w"   
+                alt="room_7" onclick="abrir_completa(-600)">
+            </article>
+            <article>
+                <img src="./img/img_desktop/08.webp"
+                srcset="./img/img_mobile/08.webp 640w,
+                        ./img/img_tablet/08.webp 1080w,
+                        ./img/img_desktop/08.webp 1920w"   
+                alt="room_8" onclick="abrir_completa(-700)">
+            </article>
+        </section>
+        <a id="derecha_link" onclick="mover('derecha')"><i class="fa-solid fa-angle-right"></i></a>
+    </div>
+
+        <!-- GALERIA PANTALLA COMPLETA-->
+
+        <div id="carrusel_completa" onmouseover="temporizador('desactivar')" onmouseout="temporizador('activar')">
+            <a onclick="cerrar_completa()"><i id="cerrar_completa" class="fa-solid fa-xmark"></i></a>
+            <a id="izquierda_link_completa" onclick="moverCompleta('izquierda')"><i class="fa-solid fa-angle-left"></i></a>
+            <section id="tira_imagenes_completa">
+                <article class="contenedor_imagen_completa">
+                <img src="./img/img_desktop/01.webp"
+                    srcset="./img/img_mobile/01.webp 640w,
+                            ./img/img_tablet/01.webp 1080w,
+                            ./img/img_desktop/01.webp 1920w"  
+                    alt="room_2">
+                </article>
+                <article class="contenedor_imagen_completa">
+                    <img src="./img/img_desktop/02.webp"
+                    srcset="./img/img_mobile/02.webp 640w,
+                            ./img/img_tablet/02.webp 1080w,
+                            ./img/img_desktop/02.webp 1920w"  
+                    alt="room_2">
+                </article>
+                <article class="contenedor_imagen_completa">
+                    <img src="./img/img_desktop/03.webp"
+                    srcset="./img/img_mobile/03.webp 640w,
+                            ./img/img_tablet/03.webp 1080w,
+                            ./img/img_desktop/03.webp 1920w"  
+                    alt="room_2">
+                </article>
+                <article class="contenedor_imagen_completa">
+                    <img src="./img/img_desktop/04.webp"
+                    srcset="./img/img_mobile/04.webp 640w,
+                            ./img/img_tablet/04.webp 1080w,
+                            ./img/img_desktop/04.webp 1920w"  
+                    alt="room_2">
+                </article>
+                <article class="contenedor_imagen_completa">
+                    <img src="./img/img_desktop/05.webp"
+                    srcset="./img/img_mobile/05.webp 640w,
+                            ./img/img_tablet/05.webp 1080w,
+                            ./img/img_desktop/05.webp 1920w"  
+                    alt="room_2">
+                </article>
+                <article class="contenedor_imagen_completa">
+                    <img src="./img/img_desktop/06.webp"
+                    srcset="./img/img_mobile/06.webp 640w,
+                            ./img/img_tablet/06.webp 1080w,
+                            ./img/img_desktop/06.webp 1920w"  
+                    alt="room_2">
+                </article>
+                <article class="contenedor_imagen_completa" >
+                    <img src="./img/img_desktop/07.webp"
+                    srcset="./img/img_mobile/07.webp 640w,
+                            ./img/img_tablet/07.webp 1080w,
+                            ./img/img_desktop/07.webp 1920w"  
+                    alt="room_2">
+                </article>
+                <article class="contenedor_imagen_completa" >
+                    <img src="./img/img_desktop/08.webp"
+                    srcset="./img/img_mobile/08.webp 640w,
+                            ./img/img_tablet/08.webp 1080w,
+                            ./img/img_desktop/08.webp 1920w"  
+                    alt="room_2">
+                </article>
+            </section>
+            <a id="derecha_link_completa" onclick="moverCompleta('derecha')"><i class="fa-solid fa-angle-right"></i></a>
+        </div>
+
+    <!-- BIENVENIDA -->
+
+    <main id="contenido_principal" class="scroll-content fadeTop">
+        <div id="imagen_articulo">
+            <img src="./img/img_desktop/playa.webp"
+                srcset="./img/img_mobile/playa.webp 640w,
+                        ./img/img_tablet/playa.webp 1080w,
+                        ./img/img_desktop/playa.webp 1920w" 
+                alt="playa">    
+        </div>
+        <article id="contenido_imagen">
+            <h3>Te damos la bienvenida a Apartamentos Graciosamar en la privilegiada Isla de La Graciosa donde disfrutar de tus vacaciones será un recuerdo inolvidable.</h3>
+            <p>GraciosaMar se compone de 6 apartamentos, 2 dúplex y una pequeña casa. Los apartamentos están ubicados en “Caleta de Sebo” a pocos minutos del muelle, las playas y de varios supermercados y restaurantes de la zona.</p>
+            <p>Todos los apartamentos se distribuyen en dos dormitorios, uno con cama doble y el otro con dos camas individuales, amplio salón-cocina totalmente equipada, terraza y 1 o 2 baños.</p>
+            <p>Un lugar ideal para sus vacaciones donde podrá descansar y disfrutar de la naturaleza, las playas y el buen tiempo.</p>
+        </article>
+    </main>
+
+    <!-- HABITACIONES CON GALERIA -->
+
+    <section id="apartamentos" class="floor">
+        <article class="room scroll-content fadeTop">
+            <div class="descripcion">
+                <div class="titulo_habitacion">
+                    <h4>GRACIOSAMAR 1-3</h4>
+                    <p class="texto_habitacion">3 apartamentos en planta baja</p>
+                </div>
+                <div class="info_habitacion">
+                    <p><span class="price">Desde 55€</span>/noche</p>
+                    <ul>
+                        <li><i class="fa-solid fa-people-roof"></i> Hasta 5 Huéspedes</li>
+                        <li><i class="fa-solid fa-cart-flatbed-suitcase"></i> 2 Habitaciones</li>
+                        <li><i class="fa-solid fa-shower"></i> 1 Baño</li>
+                        <li><i class="fa-solid fa-wifi"></i> Wifi</li>
+                    </ul>
+                    <button class="reservar_btn">Reservar</button>
+                </div>
+            </div>
+            <div class="galeria">
+                <div id="carrusel_habitaciones" onmouseover="temporizadorHab('desactivar')" onmouseout="temporizadorHab('activar')">
+                    <a id="izquierda_link" onclick="moverHabitaciones('izquierda')"><i class="fa-solid fa-angle-left"></i></a>
+                    <section id="imagenes_habitaciones">
+                        <article>
+                            <img src="./img/img_desktop/02.webp"
+                            srcset="./img/img_mobile/02.webp 640w,
+                                    ./img/img_tablet/02.webp 1080w,
+                                    ./img/img_desktop/02.webp 1920w"  
+                            alt="room_2">
+                        </article>
+                        <article>
+                            <img src="./img/img_desktop/03.webp"
+                            srcset="./img/img_mobile/03.webp 640w,
+                                    ./img/img_tablet/03.webp 1080w,
+                                    ./img/img_desktop/03.webp 1920w"  
+                            alt="room_2">
+                        </article>
+                        <article>
+                            <img src="./img/img_desktop/04.webp"
+                            srcset="./img/img_mobile/04.webp 640w,
+                                    ./img/img_tablet/04.webp 1080w,
+                                    ./img/img_desktop/04.webp 1920w"  
+                            alt="room_2">
+                        </article>
+                        <article>
+                            <img src="./img/img_desktop/05.webp"
+                            srcset="./img/img_mobile/05.webp 640w,
+                                    ./img/img_tablet/05.webp 1080w,
+                                    ./img/img_desktop/05.webp 1920w"  
+                            alt="room_2">
+                        </article>
+                        <article>
+                            <img src="./img/img_desktop/06.webp"
+                            srcset="./img/img_mobile/06.webp 640w,
+                                    ./img/img_tablet/06.webp 1080w,
+                                    ./img/img_desktop/06.webp 1920w"  
+                            alt="room_2">
+                        </article>
+                    </section>
+                    <a id="derecha_link" onclick="moverHabitaciones('derecha')"><i class="fa-solid fa-angle-right"></i></a>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    
+        <!-- SERVICIOS -->
+
+    <div id="servicios" class="bg-wrapper">
+        <section class="servicios scroll-content fadeTop">
+            <article class="lugares-dormir">
+                <i class="fa-solid fa-house"></i>
+                <h3>LUGARES PARA DORMIR</h3>
+                <hr>
+                <p>Todos los apartamentos tienen capacidad para 4 personas con opción de añadir una persona extra en cama supletoria con cargo según la temporada.</p>
+            </article>
+            <section class="barra_inferior">
+                <article>
+                    <i class="fa-solid fa-bed"></i>
+                    <h4>Dormitorio 1</h4>
+                    <p>1 cama doble</p>
+                </article>
+                <article>
+                    <i class="fa-solid fa-table-columns"></i>
+                    <h4>Dormitorio 2</h4>
+                    <p>2 camas individuales</p>
+                </article>
+                <article>
+                    <i class="fa-regular fa-square"></i>
+                    <h4>Salón</h4>
+                    <p>1 cama supletoria (opcional con cargos)</p>
+                </article>
+            </section>
+
+            <hr class="separator">
+
+            <section class="barra_inferior_servicios">
+                <article>
+                    <i class="fa-solid fa-key"></i>
+                    <h3>SERVICIOS</h3>
+                    <hr>
+                </article>
+                <section>
+                    <article>
+                        <i class="fa-solid fa-wifi"></i>
+                        <h4>Wifi</h4>
+                        <p>Acceso gratuito de alta velocidad ilimitado</p>
+                    </article>
+                    <article>
+                        <i class="fa-solid fa-tv"></i>
+                        <h4>Televisión satélite</h4>
+                        <p>Movistar+, UK TV y canales internacionales (Alemán, Francés, Italiano, Holandés...) </p>
+                    </article>
+                    <article>
+                        <i class="fa-solid fa-keyboard"></i>
+                        <h4>Tv-Box</h4>
+                        <p>Android Tv-Box, IPTV, navegador de internet, Youtube..</p>
+                    </article>
+                </section>
+
+                <section>
+                    <article>
+                        <i class="fa-solid fa-phone-flip"></i>
+                        <h4>Teléfono</h4>
+                        <p>Llamadas gratis nacionales a fijos y móvil</p>
+                    </article>
+                    <article>
+                        <i class="fa-solid fa-kitchen-set"></i>
+                        <h4>Cocina</h4>
+                        <p>Nevera, microondas, tostadora, vitrocerámica y utensilios básicos</p>
+                    </article>
+                    <article>
+                        <i class="fa-solid fa-vault"></i>
+                        <h4>Caja fuerte</h4>
+                    </article>
+                </section>
+
+                <section>
+                    <article>
+                        <i class="fa-solid fa-shirt"></i>
+                        <h4>Elementos</h4>
+                        <p>Perchas, sábanas y toallas de baño</p>
+                    </article>
+                    <article>
+                        <i class="fa-solid fa-people-roof"></i>
+                        <h4>Apto para familias</h4>
+                    </article>
+                    <article>
+                        <i class="fa-solid fa-baby"></i>
+                        <h4>Parque cuna</h4>
+                        <p>Con cargo según ocupación</p>
+                    </article>
+                </section>
+            </section>
+        </section>
+    </div>
+    <div class="wrapper-reglas">
+        <section class="reglas">
+            <article>
+                <i class="fa-regular fa-clipboard"></i>
+                <h3>Normas de la Casa</h3>
+                <hr>
+            </article>
+            <article>
+                <ul class="checked">
+                    <span><i class="fa-solid fa-check"></i>
+                    <li>No se admiten mascotas</li></span>
+
+                    <span><i class="fa-solid fa-check"></i>
+                    <li>No se admiten fiestas o eventos</li></span>
+
+                    <span><i class="fa-solid fa-check"></i><li>No se puede hacer ruido a partir de las 22:00</li></span>
+
+                    <span><i class="fa-solid fa-check"></i><li>Check-in: de 14:00 a 20:00</li></span>
+
+                    <span><i class="fa-solid fa-check"></i><li>Chek-out: antes de las 11:00</li></span>
+                    
+                    <span><i class="fa-solid fa-check"></i><li>El Check-in se puede retrasar después de las 14:00 en función del número de entradas y siempre será antes de las 17:00</li></span>
+
+                    <span><i class="fa-solid fa-check"></i><li>Cargo obligatorio de limpieza de 30€, debe seleccionarlo al hacer la reserva, en caso contrario se añadirá al recibir la confirmación</li></span>
+                </ul>
+            </article>
+        </section>
+    </div>
+
+    <section id="contacto" class="contacto">
+        <article>
+            <i class="fa-regular fa-envelope"></i>
+            <h3>CONTACTO</h3>
+            <hr>
+        </article>
+        <article>
+            <p>Si quiere enviarnos un mensaje rellene el formulario y en breve nos pondremos en contacto con usted.</p>
+            <form action="" method="get">
+                <input class="campo" type="text" name="nombre" placeholder="Nombre" autocomplete="off">
+                <input class="campo" type="email" name="email" placeholder="Email" autocomplete="off">
+                <input class="campo" type="text" name="comentarios" placeholder="Preguntas/Comentarios" autocomplete="off">
+                <input class="enviar" type="submit" value="Enviar">
+            </form>
+        </article>
+    </section>
+    <div id="tarifas">
+        <section class="precios">
+           <i class="fa-regular fa-credit-card"></i>
+            <h3>TARIFAS</h3>
+            <hr>
+            <div class="detalles-tarifas impar">
+                <div class="temporadas">
+                    <p>Temporada Alta</p>
+                </div>
+                <div class="tiempo-temporada">
+                    <p>1 de Julio al 30 de Septiembre</p>
+                </div>
+                <div class="caja-temporada">
+                    <p><span class="texto-temporada">Desde 70€</span> /noche</p>
+                </div>
+            </div>
+            
+            <div class="detalles-tarifas par">
+                <div class="temporadas">
+                    <p>Temporada Media</p>
+                </div>
+                <div class="tiempo-temporada">
+                    <p>1 de Mayo al 30 de Junio y 1 al 31 de Octubre</p>
+                </div>
+                <div class="caja-temporada">
+                    <p><span class="texto-temporada">Desde 60€</span> /noche</p>
+                </div>
+            </div>
+
+            <div class="detalles-tarifas impar">
+                <div class="temporadas">
+                    <p>Temporada Baja</p>
+                </div>
+                <div class="tiempo-temporada">
+                    <p>1 de Noviembre al 30 de Abril</p>
+                </div>
+                <div class="caja-temporada">
+                    <p><span class="texto-temporada">Desde 55€</span> /noche</p>
+                </div>
+            </div>
+
+            <div class="detalles-tarifas par">
+                <div class="temporadas">
+                    <p>Semana Santa</p>
+                </div>
+                <div class="tiempo-temporada">
+                    <p>3 al 12 de Abril</p>
+                </div>
+                <div class="caja-temporada">
+                    <p><span class="texto-temporada">Desde 70€</span> /noche</p>
+                </div>
+            </div>
+
+            <div class="detalles-tarifas impar">
+                <div class="temporadas">
+                    <p>Navidad</p>
+                </div>
+                <div class="tiempo-temporada">
+                    <p>21 al 31 de Diciembre</p>
+                </div>
+                <div class="caja-temporada">
+                    <p><span class="texto-temporada">Desde 70€</span> /noche</p>
+                </div>
+            </div>
+
+            <div class="detalles-tarifas par">
+                <div class="temporadas">
+                    <p>Cargo obligatorio de limpieza</p>
+                </div>
+                <div class="tiempo-temporada">
+                    <p>Debe seleccionarlo al hacer la reserva, en caso contrario se añadirá al recibir la confirmación</p>
+                </div>
+                <div class="caja-temporada">
+                    <p><span class="texto-temporada">30€</span> /reserva</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>COPYRIGHT © APARTAMENTOS GRACIOSAMAR 2019 - ALL RIGHTS RESERVED</p>
+    </footer>
+
+    <script src="graciosamar-ev1-mobile.js"></script>
+</body>
+</html>
