@@ -112,9 +112,14 @@ function mover(direccion){
 
 /* ---- GALERIA HABITACIONES ---- */
 function moverHabitaciones(direccion){
+        if (window.matchMedia("(min-width: 768px)").matches){
             limite = -200
             desplazamiento = 50
-
+        }
+        else{
+            limite = -400
+            desplazamiento = 100
+        }
             switch(direccion){
 
             case "izquierda":
